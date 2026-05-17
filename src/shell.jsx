@@ -6,10 +6,6 @@ function Hero({ totalCount, accent }) {
   return (
     <header className="hero">
       <div className="hero-left">
-        <div className="hero-eyebrow">
-          <DotIcon size={6} />
-          <span>Available for collaborations</span>
-        </div>
         <h1 className="hero-name">
           César Ramos
           <span className="hero-handle" style={{ color: accent }}>@ezar</span>
@@ -197,22 +193,12 @@ function FooterBlock({ accent }) {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-cell">
-          <div className="footer-label">Get in touch</div>
-          <a className="footer-link footer-link-lg" href="mailto:hi@ezar.dev" style={{ color: accent }}>
-            hi@ezar.dev <ArrowOutIcon size={14} />
-          </a>
-          <div className="footer-sub">Open for collabs, contracts &amp; weird ideas.</div>
-        </div>
-        <div className="footer-cell">
           <div className="footer-label">Elsewhere</div>
           <a className="footer-link" href="https://github.com/ezar" target="_blank" rel="noreferrer">
             <GithubIcon size={14} /> github.com/ezar
           </a>
-          <a className="footer-link" href="#" onClick={(e) => e.preventDefault()}>
-            <span style={{ width: 14, display: 'inline-flex', justifyContent: 'center' }}>×</span> x.com/ezar
-          </a>
-          <a className="footer-link" href="#" onClick={(e) => e.preventDefault()}>
-            <span style={{ width: 14, display: 'inline-flex', justifyContent: 'center' }}>in</span> linkedin.com/in/ezar
+          <a className="footer-link" href="https://www.linkedin.com/in/cesarramoslopez/" target="_blank" rel="noreferrer">
+            <span style={{ width: 14, display: 'inline-flex', justifyContent: 'center' }}>in</span> linkedin.com/in/cesarramoslopez
           </a>
         </div>
         <div className="footer-cell">
