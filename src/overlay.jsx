@@ -2,7 +2,7 @@
 // Desktop pane: tries iframe; user can drop a screenshot to override (persisted in localStorage).
 // Mobile pane: same idea, narrower aspect.
 
-const { useEffect, useRef, useCallback, useState } = React;
+const { useEffect, useRef, useCallback, useState, useMemo } = React;
 
 function useLocalShot(projectId, kind) {
   const key = `ezar.shot.${projectId}.${kind}`;
@@ -19,13 +19,28 @@ function useLocalShot(projectId, kind) {
   return [src, save];
 }
 
+const MOBILE_W = 390;
+
 function ScreenSlot({ project, kind, accent }) {
   // kind = 'desktop' | 'mobile'
   const [shot, setShot] = useLocalShot(project.id, kind);
   const [iframeOk, setIframeOk] = useState(true);
   const [showIframe, setShowIframe] = useState(true);
   const [dragOver, setDragOver] = useState(false);
+  const [scale, setScale] = useState(1);
   const iframeRef = useRef(null);
+  const wrapRef = useRef(null);
+
+  useEffect(() => {
+    if (kind !== 'mobile') return;
+    const el = wrapRef.current;
+    if (!el) return;
+    const obs = new ResizeObserver(([e]) => {
+      setScale(e.contentRect.width / MOBILE_W);
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [kind]);
 
   // Reset state when project changes
   useEffect(() => {
@@ -80,6 +95,28 @@ function ScreenSlot({ project, kind, accent }) {
       );
     }
     if (project.live && showIframe && iframeOk) {
+      if (kind === 'mobile') {
+        return (
+          <div ref={wrapRef} style={{ width: '100%', height: '100%', overflow: 'hidden', position: 'relative' }}>
+            <iframe
+              ref={iframeRef}
+              src={project.live}
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+              referrerPolicy="no-referrer"
+              title={project.title + ' preview'}
+              style={{
+                width: MOBILE_W + 'px',
+                height: Math.round(MOBILE_W * 19 / 9) + 'px',
+                border: 0,
+                display: 'block',
+                transformOrigin: 'top left',
+                transform: `scale(${scale})`,
+              }}
+            />
+          </div>
+        );
+      }
       return (
         <iframe
           ref={iframeRef}
