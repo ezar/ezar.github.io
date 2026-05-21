@@ -44,8 +44,8 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
 
       <div className="card-foot">
         <span className="card-meta">
-          <span className={'status-dot' + (project.live ? ' status-on' : '')} />
-          {project.live ? 'Live' : 'Source only'} · {project.year}
+          <span className={'status-dot' + (project.live ? ' status-on' : project.wip ? ' status-wip' : '')} />
+          {project.live ? 'Live' : project.wip ? 'In progress' : 'Source only'} · {project.year}
         </span>
         <span className="card-cta">
           Open <ChevronIcon size={10} dir="right" />
@@ -82,7 +82,7 @@ function ProjectRow({ project, iconMode, onOpen }) {
       </span>
       <span className="row-year">{project.year}</span>
       <span className="row-status">
-        <span className={'status-dot' + (project.live ? ' status-on' : '')} />
+        <span className={'status-dot' + (project.live ? ' status-on' : project.wip ? ' status-wip' : '')} />
       </span>
       <span className="row-open">
         <ChevronIcon size={11} dir="right" />

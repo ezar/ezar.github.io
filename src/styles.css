@@ -384,6 +384,15 @@ body {
   background: var(--ok);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--ok) 18%, transparent);
 }
+.status-dot.status-wip {
+  background: oklch(0.78 0.14 70);
+  box-shadow: 0 0 0 3px oklch(0.78 0.14 70 / 0.18);
+  animation: wip-pulse 2s ease-in-out infinite;
+}
+@keyframes wip-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
 .card-cta {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.7rem;
