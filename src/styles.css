@@ -673,10 +673,22 @@ body {
 
 .overlay-body {
   padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+  min-height: 0;
+}
+.overlay-info {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
   overflow-y: auto;
+  max-height: calc(92vh - 100px);
+}
+@media (max-width: 900px) {
+  .overlay-body { grid-template-columns: 1fr; }
+  .overlay-info { max-height: none; }
 }
 .overlay-screens {
   display: grid;
