@@ -672,24 +672,14 @@ body {
 .overlay-close:hover { color: var(--text); border-color: var(--border); background: var(--surface-hi); }
 
 .overlay-body {
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 1.5rem;
-  align-items: start;
-  min-height: 0;
-}
-.overlay-info {
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   overflow-y: auto;
-  max-height: calc(92vh - 100px);
+  scrollbar-width: none;
 }
-@media (max-width: 900px) {
-  .overlay-body { grid-template-columns: 1fr; }
-  .overlay-info { max-height: none; }
-}
+.overlay-body::-webkit-scrollbar { display: none; }
 .overlay-screens {
   display: grid;
   grid-template-columns: 1fr 280px;

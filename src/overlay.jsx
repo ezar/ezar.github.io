@@ -228,40 +228,38 @@ function PreviewOverlay({ project, iconMode, onClose }) {
             <ScreenSlot project={project} kind="mobile" accent={accent} />
           </div>
 
-          <div className="overlay-info">
-            <section className="overlay-section">
-              <div className="overlay-section-label">Overview</div>
-              <p className="overlay-desc">{project.desc}</p>
-            </section>
+          <section className="overlay-section">
+            <div className="overlay-section-label">Overview</div>
+            <p className="overlay-desc">{project.desc}</p>
+          </section>
 
-            <section className="overlay-section">
-              <div className="overlay-section-label">Stack</div>
-              <div className="overlay-tech">
-                {project.tech.map(t => (
-                  <span
-                    key={t}
-                    className={'pill pill-lg' + (window.TECH_HIGHLIGHT.includes(t) ? ' pill-hi' : '')}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </section>
+          <section className="overlay-section">
+            <div className="overlay-section-label">Stack</div>
+            <div className="overlay-tech">
+              {project.tech.map(t => (
+                <span
+                  key={t}
+                  className={'pill pill-lg' + (window.TECH_HIGHLIGHT.includes(t) ? ' pill-hi' : '')}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </section>
 
-            <section className="overlay-actions">
-              {project.live && (
-                <a className="btn btn-primary" href={project.live} target="_blank" rel="noreferrer"
-                   style={{ '--card-accent': accent }}>
-                  <ArrowOutIcon size={12} /> Open live demo
-                </a>
-              )}
-              {project.repo && (
-                <a className="btn btn-ghost" href={project.repo} target="_blank" rel="noreferrer">
-                  <GithubIcon size={14} /> Source on GitHub
-                </a>
-              )}
-            </section>
-          </div>
+          <section className="overlay-actions">
+            {project.live && (
+              <a className="btn btn-primary" href={project.live} target="_blank" rel="noreferrer"
+                 style={{ '--card-accent': accent }}>
+                <ArrowOutIcon size={12} /> Open live demo
+              </a>
+            )}
+            {project.repo && (
+              <a className="btn btn-ghost" href={project.repo} target="_blank" rel="noreferrer">
+                <GithubIcon size={14} /> Source on GitHub
+              </a>
+            )}
+          </section>
         </div>
       </div>
     </div>
