@@ -21,6 +21,21 @@ function useLocalShot(projectId, kind) {
 
 const MOBILE_W = 390;
 
+function BrowserBar({ url }) {
+  let host = '';
+  try { if (url) host = new URL(url).hostname; } catch {}
+  return (
+    <div className="browser-bar">
+      <span className="browser-dots">
+        <span className="browser-dot dot-red" />
+        <span className="browser-dot dot-yellow" />
+        <span className="browser-dot dot-green" />
+      </span>
+      <span className="browser-url">{host || 'no live demo'}</span>
+    </div>
+  );
+}
+
 function ScreenSlot({ project, kind, accent }) {
   // kind = 'desktop' | 'mobile'
   const [shot, setShot] = useLocalShot(project.id, kind);
@@ -157,6 +172,9 @@ function ScreenSlot({ project, kind, accent }) {
   return (
     <div className={'screen screen-' + kind}>
       {renderInner()}
+      {kind === 'desktop' && <BrowserBar url={project.live} />}
+      {kind === 'mobile'  && <div className="phone-notch" />}
+      {kind === 'mobile'  && <div className="phone-home-bar" />}
     </div>
   );
 }
