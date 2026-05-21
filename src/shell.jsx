@@ -163,9 +163,9 @@ function StackAggregate({ projects }) {
 
 function NowStrip({ accent }) {
   const items = [
-    { kw: 'Now',     text: 'Wiring CIMA medication tooling into a multi-agent health assistant.' },
-    { kw: 'Next',    text: 'Indoor energy forecasting on real Datadis curves.' },
-    { kw: 'Reading', text: 'Designing Data-Intensive Applications · revisiting CRDTs.' },
+    { kw: 'Building', text: 'Brain Twin — AI second brain that maps your personal knowledge graph.' },
+    { kw: 'Building', text: 'Zoom Viewer — meeting intelligence layer: transcripts, summaries, action items.' },
+    { kw: 'Reading',  text: 'Designing Data-Intensive Applications · revisiting CRDTs.' },
   ];
   return (
     <section className="now">
