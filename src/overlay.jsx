@@ -39,8 +39,9 @@ function BrowserBar({ url }) {
 function ScreenSlot({ project, kind, accent }) {
   // kind = 'desktop' | 'mobile'
   const [shot, setShot] = useLocalShot(project.id, kind);
+  const isSmallScreen = window.innerWidth <= 780;
   const [iframeOk, setIframeOk] = useState(true);
-  const [showIframe, setShowIframe] = useState(true);
+  const [showIframe, setShowIframe] = useState(!isSmallScreen);
   const [dragOver, setDragOver] = useState(false);
   const [scale, setScale] = useState(1);
   const iframeRef = useRef(null);
