@@ -122,8 +122,8 @@ function ScreenSlot({ project, kind, accent }) {
               referrerPolicy="no-referrer"
               title={project.title + ' preview'}
               style={{
-                width: (MOBILE_W + 20) + 'px',
-                height: Math.round((MOBILE_W + 20) * 19 / 9) + 'px',
+                width: MOBILE_W + 'px',
+                height: Math.round(MOBILE_W * 19 / 9) + 'px',
                 border: 0,
                 display: 'block',
                 transformOrigin: 'top left',
