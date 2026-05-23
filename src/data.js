@@ -2,6 +2,18 @@
 // `cat` drives the colored accent and icon. `featured` lets a card span 2 cols in bento.
 window.PORTFOLIO_PROJECTS = [
   {
+    id: 'corona-m5',
+    title: 'CoronaVirus Monitor',
+    glyph: 'Cv',
+    cat: 'project',
+    desc: 'Real-time COVID-19 stats on an M5StickC Plus — case counts, deaths and recoveries fetched live and rendered on the built-in display.',
+    tech: ['C++', 'Arduino', 'M5StickC Plus'],
+    live: null,
+    repo: 'https://github.com/ezar/M5StickCPlus-CoronaVirus',
+    year: 2021,
+    featured: false,
+  },
+  {
     id: 'claude-desktop-buddy',
     title: 'Claude Desktop Buddy',
     glyph: 'Cb',
