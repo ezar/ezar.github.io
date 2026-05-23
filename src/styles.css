@@ -32,6 +32,24 @@
   --radius-sm:   8px;
 }
 
+[data-theme="light"] {
+  --bg:          oklch(0.98 0.002 270);
+  --bg-elev:     oklch(0.96 0.003 270);
+  --surface:     oklch(0.93 0.005 270);
+  --surface-hi:  oklch(0.88 0.006 270);
+  --border:      oklch(0.72 0.008 270 / 0.45);
+  --border-soft: oklch(0.72 0.008 270 / 0.22);
+  --text:        oklch(0.14 0.010 270);
+  --text-dim:    oklch(0.35 0.010 270);
+  --text-faint:  oklch(0.52 0.010 270);
+  --text-mute:   oklch(0.65 0.008 270);
+  --ok:          oklch(0.50 0.18 160);
+  color-scheme: light;
+}
+
+:root { color-scheme: dark; }
+[data-theme="light"] { color-scheme: light; }
+
 .density-compact  { --pad-card: 1.15rem; --gap-grid: 0.6rem; --gap-section: 3.5rem; }
 .density-comfy    { --pad-card: 1.6rem;  --gap-grid: 1rem;   --gap-section: 5rem; }
 .density-spacious { --pad-card: 2.2rem;  --gap-grid: 1.5rem; --gap-section: 7rem; }

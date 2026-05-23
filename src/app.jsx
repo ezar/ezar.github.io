@@ -5,6 +5,10 @@ const { useState, useMemo } = React;
 function App() {
   const [t, setTweak] = useTweaks(window.TWEAK_DEFAULTS);
 
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', t.theme);
+  }, [t.theme]);
+
   const [activeCats, setActiveCats] = useState(() => new Set());
   const [activeTechs, setActiveTechs] = useState(() => new Set());
   const [sort, setSort] = useState('recent'); // recent | alpha | demo
@@ -112,6 +116,12 @@ function App() {
 
       <TweaksPanel title="Tweaks">
         <TweakSection label="Theme" />
+        <TweakRadio
+          label="Mode"
+          value={t.theme}
+          options={['dark', 'light']}
+          onChange={(v) => setTweak('theme', v)}
+        />
         <TweakColor
           label="Accent"
           value={t.accent}
