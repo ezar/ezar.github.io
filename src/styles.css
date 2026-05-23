@@ -218,6 +218,15 @@ body {
   margin-left: 0.3rem;
 }
 .chip-clear:hover { color: var(--text); border-color: var(--border); }
+.chip-surprise {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-color: color-mix(in oklch, var(--accent) 35%, transparent);
+  background: color-mix(in oklch, var(--accent) 6%, transparent);
+}
+.chip-surprise:hover { background: color-mix(in oklch, var(--accent) 14%, transparent); border-color: var(--accent); color: var(--accent); }
 
 .seg {
   display: inline-flex;
@@ -305,6 +314,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.card-head-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+.card-fork {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.58rem;
+  color: var(--text-mute);
+  letter-spacing: 0.05em;
 }
 .card-tag {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -447,7 +463,8 @@ body {
 }
 .row:last-child { border-bottom: 0; }
 .row:hover { background: var(--surface-hi); }
-.row-title { font-weight: 500; font-size: 0.95rem; letter-spacing: -0.01em; }
+.row-title { font-weight: 500; font-size: 0.95rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.5rem; }
+.row-fork { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.6rem; color: var(--text-mute); font-weight: 400; }
 .row-tag {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.66rem;
@@ -823,6 +840,8 @@ body {
   max-width: 70ch;
   text-wrap: pretty;
 }
+.overlay-long-desc { color: var(--text-dim); margin-top: 0.4rem; }
+.overlay-fork { font-size: 0.62rem; opacity: 0.7; }
 .overlay-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 .overlay-actions {

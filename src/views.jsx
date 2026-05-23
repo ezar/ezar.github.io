@@ -21,9 +21,12 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
       <div className="card-rule" />
       <div className="card-head">
         <ProjectIcon project={project} iconMode={iconMode} size={28} accent={accent} />
-        <span className="card-tag" style={{ color: accent, borderColor: accent + '33' }}>
-          {window.CATEGORIES[project.cat].label}
-        </span>
+        <div className="card-head-right">
+          {project.forked && <span className="card-fork">↳ fork</span>}
+          <span className="card-tag" style={{ color: accent, borderColor: accent + '33' }}>
+            {window.CATEGORIES[project.cat].label}
+          </span>
+        </div>
       </div>
 
       <div className="card-body">
@@ -67,7 +70,10 @@ function ProjectRow({ project, iconMode, onOpen }) {
       <span className="row-icon">
         <ProjectIcon project={project} iconMode={iconMode} size={20} accent={accent} />
       </span>
-      <span className="row-title">{project.title}</span>
+      <span className="row-title">
+        {project.title}
+        {project.forked && <span className="row-fork">↳ fork</span>}
+      </span>
       <span className="row-tag" style={{ color: accent }}>
         {window.CATEGORIES[project.cat].label}
       </span>

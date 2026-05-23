@@ -42,7 +42,7 @@ function FiltersBar({
   sort, onSort,
   view, onView,
   filtered, total,
-  onReset,
+  onReset, onSurprise,
 }) {
   return (
     <div className="filters">
@@ -118,6 +118,9 @@ function FiltersBar({
           </button>
         )}
         <span style={{ flex: 1 }} />
+        <button className="chip chip-surprise" onClick={onSurprise} title="Open a random project">
+          ✦ Sorpréndeme
+        </button>
         <span className="filter-count">
           <span style={{ color: 'var(--text)' }}>{filtered}</span>
           <span style={{ opacity: 0.5 }}> / {total}</span>

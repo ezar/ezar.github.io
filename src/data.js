@@ -2,6 +2,21 @@
 // `cat` drives the colored accent and icon. `featured` lets a card span 2 cols in bento.
 window.PORTFOLIO_PROJECTS = [
   {
+    id: 'claude-desktop-buddy',
+    title: 'Claude Desktop Buddy',
+    glyph: 'Cb',
+    cat: 'project',
+    desc: 'ESP32 desk pet that reacts to Claude for Desktop via Bluetooth LE — displays permission prompts, messages and animated GIF packs on an M5StickCPlus.',
+    longDesc: 'Fork of the official Anthropic reference implementation. Added support for animated GIF character packs, NVS-backed persistent settings and an extended BLE command set so the pet can react to more Claude event types. Built with PlatformIO and the Arduino framework on top of the Nordic UART Service.',
+    tech: ['C++', 'ESP32', 'Arduino', 'BLE', 'PlatformIO'],
+    live: null,
+    repo: 'https://github.com/ezar/claude-desktop-buddy',
+    year: 2025,
+    featured: false,
+    forked: true,
+    forkedFrom: 'anthropics/claude-desktop-buddy',
+  },
+  {
     id: 'tokenbar',
     title: 'TokenBar',
     glyph: 'Tb',

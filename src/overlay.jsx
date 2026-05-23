@@ -214,6 +214,12 @@ function PreviewOverlay({ project, iconMode, onClose }) {
                 <span className="overlay-eyebrow-dot">·</span>
                 <span className={'status-dot' + (project.live ? ' status-on' : '')} />
                 {project.live ? 'Live' : 'Source only'}
+                {project.forked && (
+                  <>
+                    <span className="overlay-eyebrow-dot">·</span>
+                    <span className="overlay-fork">↳ fork of {project.forkedFrom}</span>
+                  </>
+                )}
               </div>
               <h2 className="overlay-title">{project.title}</h2>
             </div>
@@ -232,6 +238,7 @@ function PreviewOverlay({ project, iconMode, onClose }) {
           <section className="overlay-section">
             <div className="overlay-section-label">Overview</div>
             <p className="overlay-desc">{project.desc}</p>
+            {project.longDesc && <p className="overlay-desc overlay-long-desc">{project.longDesc}</p>}
           </section>
 
           <section className="overlay-section">

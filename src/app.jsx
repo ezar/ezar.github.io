@@ -59,6 +59,11 @@ function App() {
 
   const onOpen = (p) => setOpenId(p.id);
   const onClose = () => setOpenId(null);
+  const onSurprise = () => {
+    const all = window.PORTFOLIO_PROJECTS;
+    const pick = all[Math.floor(Math.random() * all.length)];
+    setOpenId(pick.id);
+  };
   const openProject = openId
     ? window.PORTFOLIO_PROJECTS.find(p => p.id === openId)
     : null;
@@ -89,6 +94,7 @@ function App() {
           filtered={filtered.length}
           total={window.PORTFOLIO_PROJECTS.length}
           onReset={resetFilters}
+          onSurprise={onSurprise}
         />
       </div>
 
