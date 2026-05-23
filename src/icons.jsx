@@ -80,6 +80,21 @@ function GithubIcon({ size = 14 }) {
   );
 }
 
+function SunIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <circle cx="7" cy="7" r="2.5" />
+      <path d="M7 1v1.5M7 11.5V13M1 7h1.5M11.5 7H13M2.93 2.93l1.06 1.06M10.01 10.01l1.06 1.06M11.07 2.93l-1.06 1.06M3.99 10.01l-1.06 1.06" />
+    </svg>
+  );
+}
+function MoonIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11.5 9A5 5 0 1 1 5 2.5a3.5 3.5 0 0 0 6.5 6.5z" />
+    </svg>
+  );
+}
 function CloseIcon({ size = 14 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
@@ -154,6 +169,8 @@ Object.assign(window, {
   ChevronIcon,
   ArrowOutIcon,
   GithubIcon,
+  SunIcon,
+  MoonIcon,
   CloseIcon,
   SearchIcon,
   DotIcon,

@@ -245,6 +245,8 @@ body {
   background: color-mix(in oklch, var(--accent) 6%, transparent);
 }
 .chip-surprise:hover { background: color-mix(in oklch, var(--accent) 14%, transparent); border-color: var(--accent); color: var(--accent); }
+.chip-theme { width: 30px; padding: 0; justify-content: center; color: var(--text-dim); }
+.chip-theme:hover { color: var(--text); border-color: var(--border); }
 
 .seg {
   display: inline-flex;

@@ -42,7 +42,7 @@ function FiltersBar({
   sort, onSort,
   view, onView,
   filtered, total,
-  onReset, onSurprise,
+  onReset, onSurprise, theme, onToggleTheme,
 }) {
   return (
     <div className="filters">
@@ -120,6 +120,9 @@ function FiltersBar({
         <span style={{ flex: 1 }} />
         <button className="chip chip-surprise" onClick={onSurprise} title="Open a random project">
           ✦ Sorpréndeme
+        </button>
+        <button className="chip chip-theme" onClick={onToggleTheme} title="Toggle theme">
+          {theme === 'dark' ? <SunIcon size={13} /> : <MoonIcon size={13} />}
         </button>
         <span className="filter-count">
           <span style={{ color: 'var(--text)' }}>{filtered}</span>

@@ -5,9 +5,12 @@ const { useState, useMemo } = React;
 function App() {
   const [t, setTweak] = useTweaks(window.TWEAK_DEFAULTS);
 
+  const [theme, setTheme] = useState(() => localStorage.getItem('ezar.theme') || 'dark');
   React.useEffect(() => {
-    document.documentElement.setAttribute('data-theme', t.theme);
-  }, [t.theme]);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('ezar.theme', theme);
+  }, [theme]);
+  const toggleTheme = () => setTheme(th => th === 'dark' ? 'light' : 'dark');
 
   const [activeCats, setActiveCats] = useState(() => new Set());
   const [activeTechs, setActiveTechs] = useState(() => new Set());
@@ -99,6 +102,8 @@ function App() {
           total={window.PORTFOLIO_PROJECTS.length}
           onReset={resetFilters}
           onSurprise={onSurprise}
+          theme={theme}
+          onToggleTheme={toggleTheme}
         />
       </div>
 
