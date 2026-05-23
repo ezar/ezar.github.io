@@ -170,12 +170,19 @@ function ScreenSlot({ project, kind, accent }) {
     );
   };
 
+  if (kind === 'desktop') {
+    return (
+      <div className="screen screen-desktop">
+        <BrowserBar url={project.live} />
+        <div className="screen-content-area">{renderInner()}</div>
+      </div>
+    );
+  }
   return (
-    <div className={'screen screen-' + kind}>
+    <div className="screen screen-mobile">
       {renderInner()}
-      {kind === 'desktop' && <BrowserBar url={project.live} />}
-      {kind === 'mobile'  && <div className="phone-notch" />}
-      {kind === 'mobile'  && <div className="phone-home-bar" />}
+      <div className="phone-notch" />
+      <div className="phone-home-bar" />
     </div>
   );
 }
