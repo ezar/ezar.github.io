@@ -137,6 +137,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'nakama-trivia',
+    title: 'Nakama Trivia',
+    glyph: 'Nt',
+    cat: 'game',
+    desc: 'One Piece trivia game — 150+ questions across 5 categories, streak multipliers, Berry economy, rank progression and optional Claude AI to generate questions and explain answers.',
+    tech: ['React', 'TypeScript', 'Vite', 'Zustand', 'Framer Motion', 'Claude AI', 'PWA'],
+    live: 'https://ezar.github.io/nakama-trivia/',
+    repo: 'https://github.com/ezar/nakama-trivia',
+    year: 2025,
+    featured: false,
+  },
+  {
     id: 'nakama-words',
     title: 'Palabra Hunter',
     glyph: 'Ph',
