@@ -221,6 +221,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'nakama-bros',
+    title: 'Nakama Bros',
+    glyph: 'Nb',
+    cat: 'game',
+    desc: '2D side-scrolling platformer with the One Piece Straw Hat crew — procedurally generated sprites, tilesets and skies, fully synthesized audio (no pre-recorded files), keyboard, gamepad and mobile touch controls.',
+    tech: ['TypeScript', 'Vite', 'Canvas', 'Web Audio API'],
+    live: null,
+    repo: 'https://github.com/ezar/nakama-bros',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'may4',
     title: 'May The 4th',
     glyph: 'M4',

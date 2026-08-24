@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="38%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#16151e"/>
+      <stop offset="100%" stop-color="#0d0d0f"/>
+    </radialGradient>
+    <clipPath id="clip">
+      <rect width="1200" height="630"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative star/spark (agent icon) — large, top-right, ghosted -->
+  <g clip-path="url(#clip)" opacity="0.055">
+    <path d="M950 80 L985 240 L1140 315 L985 390 L950 550 L915 390 L760 315 L915 240 Z"
+          fill="#a39bff"/>
+  </g>
+
+  <!-- Smaller accent dots -->
+  <circle cx="1090" cy="120" r="3" fill="#a39bff" opacity="0.35"/>
+  <circle cx="1120" cy="148" r="2" fill="#a39bff" opacity="0.25"/>
+  <circle cx="1065" cy="155" r="1.5" fill="#a39bff" opacity="0.2"/>
+  <circle cx="1140" cy="95"  r="1.5" fill="#a39bff" opacity="0.18"/>
+
+  <!-- Left accent bar -->
+  <rect x="72" y="185" width="3" height="260" rx="1.5" fill="#a39bff" opacity="0.7"/>
+
+  <!-- Name -->
+  <text x="100" y="270"
+        font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+        font-size="76" font-weight="700" fill="#eeeef5" letter-spacing="-2.5">César Ramos</text>
+
+  <!-- Handle -->
+  <text x="103" y="330"
+        font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+        font-size="34" font-weight="400" fill="#a39bff" letter-spacing="0.2">@ezar</text>
+
+  <!-- Tagline -->
+  <text x="103" y="378"
+        font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+        font-size="22" font-weight="400" fill="#5c5c7a" letter-spacing="0.1">Industrial AI &amp; maker · Spain</text>
+
+  <!-- Divider -->
+  <line x1="100" y1="415" x2="700" y2="415" stroke="#2a2a3a" stroke-width="1"/>
+
+  <!-- Category chips -->
+  <!-- Games -->
+  <rect x="100" y="432" width="98" height="32" rx="6" fill="none" stroke="#78614e" stroke-width="1" opacity="0.7"/>
+  <text x="149" y="452" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500" fill="#c49a5e" text-anchor="middle" opacity="0.9">Games</text>
+
+  <!-- Projects -->
+  <rect x="210" y="432" width="98" height="32" rx="6" fill="none" stroke="#4a7a5a" stroke-width="1" opacity="0.7"/>
+  <text x="259" y="452" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500" fill="#5db87a" text-anchor="middle" opacity="0.9">Projects</text>
+
+  <!-- MCP -->
+  <rect x="320" y="432" width="98" height="32" rx="6" fill="none" stroke="#5a4a7a" stroke-width="1" opacity="0.7"/>
+  <text x="369" y="452" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500" fill="#9a7acc" text-anchor="middle" opacity="0.9">MCP servers</text>
+
+  <!-- Agents -->
+  <rect x="430" y="432" width="98" height="32" rx="6" fill="none" stroke="#7a4a50" stroke-width="1" opacity="0.7"/>
+  <text x="479" y="452" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500" fill="#cc7a85" text-anchor="middle" opacity="0.9">Agents</text>
+
+  <!-- URL bottom -->
+  <text x="100" y="564"
+        font-family="'Courier New', Courier, monospace"
+        font-size="17" font-weight="400" fill="#3a3a55" letter-spacing="1.5">ezar.github.io</text>
+</svg>
