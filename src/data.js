@@ -217,7 +217,7 @@ window.PORTFOLIO_PROJECTS = [
     tech: ['React', 'TypeScript', 'Vite'],
     live: 'https://family-hangman.vercel.app/',
     repo: 'https://github.com/ezar/family-hangman',
-    year: 2025,
+    year: 2026,
     featured: false,
   },
   {
