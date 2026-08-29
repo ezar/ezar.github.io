@@ -209,6 +209,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'family-hangman',
+    title: 'Family Hangman',
+    glyph: 'Fh',
+    cat: 'game',
+    desc: 'Family-friendly hangman word game. Guess letters to reveal the hidden word before the drawing completes — clean UI, suitable for all ages.',
+    tech: ['React', 'TypeScript', 'Vite'],
+    live: 'https://family-hangman.vercel.app/',
+    repo: 'https://github.com/ezar/family-hangman',
+    year: 2025,
+    featured: false,
+  },
+  {
     id: 'patches',
     title: 'Patches',
     glyph: 'Pa',
