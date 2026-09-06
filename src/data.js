@@ -213,7 +213,7 @@ window.PORTFOLIO_PROJECTS = [
     title: 'Davy Back Fleet',
     glyph: 'Db',
     cat: 'game',
-    desc: 'One Piece Davy Back Fight — compete against rival pirate crews in a series of mini-game challenges to win crew members and grow your fleet.',
+    desc: 'One Piece-themed battleship game. Place your pirate ships, call your shots and sink the rival fleet before they sink yours.',
     tech: ['React', 'TypeScript', 'Vite'],
     live: 'https://davy-back-fleet.vercel.app/',
     repo: 'https://github.com/ezar/davy-back-fleet',
