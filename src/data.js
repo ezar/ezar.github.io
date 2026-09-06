@@ -209,6 +209,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'davy-back-fleet',
+    title: 'Davy Back Fleet',
+    glyph: 'Db',
+    cat: 'game',
+    desc: 'One Piece Davy Back Fight — compete against rival pirate crews in a series of mini-game challenges to win crew members and grow your fleet.',
+    tech: ['React', 'TypeScript', 'Vite'],
+    live: 'https://davy-back-fleet.vercel.app/',
+    repo: 'https://github.com/ezar/davy-back-fleet',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'family-hangman',
     title: 'Family Hangman',
     glyph: 'Fh',
