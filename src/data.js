@@ -89,6 +89,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'theremano',
+    title: 'Theremano',
+    glyph: 'Tr',
+    cat: 'project',
+    desc: 'Browser theremin played in the air — MediaPipe tracks 21 landmarks per hand via camera, right hand controls pitch and filter, left adds volume and timbre. Quantized to scale by default, 4-layer loop station, shareable 9:16 clips.',
+    tech: ['TypeScript', 'Vite', 'Tone.js', 'MediaPipe', 'PWA'],
+    live: 'https://ezar.github.io/theremano/',
+    repo: 'https://github.com/ezar/theremano',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'beat-painter',
     title: 'beat-painter',
     glyph: 'Bp',
