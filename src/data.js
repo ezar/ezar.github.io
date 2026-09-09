@@ -289,4 +289,4 @@ window.CATEGORIES = {
   agent:   { label: 'Agent',   plural: 'Agents',   legacyEmoji: '📈' },
 };
 
-window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3'];
+window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js'];
