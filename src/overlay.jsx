@@ -188,7 +188,7 @@ function ScreenSlot({ project, kind, accent }) {
 }
 
 function PreviewOverlay({ project, iconMode, onClose }) {
-  // Escape to close
+  // All hooks must be called unconditionally before any early return.
   useEffect(() => {
     if (!project) return;
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -200,17 +200,17 @@ function PreviewOverlay({ project, iconMode, onClose }) {
     };
   }, [project, onClose]);
 
-  if (!project) return null;
-  const accent = window.CAT_ACCENT[project.cat];
-  const c = window.CATEGORIES[project.cat];
-
   const usedDeps = useMemo(() => {
-    if (!project.uses) return [];
+    if (!project || !project.uses) return [];
     return project.uses
       .map(id => window.PORTFOLIO_PROJECTS.find(p => p.id === id))
       .filter(Boolean);
-  }, [project.uses]);
+  }, [project]);
 
+  if (!project) return null;
+
+  const accent = window.CAT_ACCENT[project.cat];
+  const c = window.CATEGORIES[project.cat];
   const showPreview = project.cat !== 'library';
 
   return (

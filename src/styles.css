@@ -393,6 +393,17 @@ body {
 .pill-sm { font-size: 0.62rem; padding: 0.12rem 0.4rem; }
 .pill-lg { font-size: 0.75rem; padding: 0.28rem 0.65rem; }
 .pill-faint { color: var(--text-faint); }
+.pill-dep {
+  background: color-mix(in oklch, var(--dep-accent) 10%, transparent);
+  color: var(--dep-accent);
+  border-color: color-mix(in oklch, var(--dep-accent) 35%, transparent);
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.pill-dep:hover {
+  background: color-mix(in oklch, var(--dep-accent) 20%, transparent);
+  border-color: color-mix(in oklch, var(--dep-accent) 55%, transparent);
+}
 
 .card-foot {
   display: flex;
