@@ -5,11 +5,12 @@ const { useMemo } = React;
 const CAT_ACCENT = {
   game:    'oklch(0.78 0.14 70)',   // ember / amber
   project: 'oklch(0.78 0.13 165)',  // mint
+  library: 'oklch(0.75 0.12 240)',  // steel
   mcp:     'oklch(0.74 0.16 285)',  // iris
   agent:   'oklch(0.72 0.16 25)',   // rose
 };
 
-// ── Card ─────────────────────────────────────────────────────────────────────
+// ── Card ─────────────────────────────────────────────────────────────────────────────────
 function ProjectCard({ project, iconMode, onOpen, featured = false }) {
   const accent = CAT_ACCENT[project.cat];
   return (
@@ -58,7 +59,7 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
   );
 }
 
-// ── List row ─────────────────────────────────────────────────────────────────
+// ── List row ────────────────────────────────────────────────────────────────────────────────
 function ProjectRow({ project, iconMode, onOpen }) {
   const accent = CAT_ACCENT[project.cat];
   return (
@@ -97,7 +98,7 @@ function ProjectRow({ project, iconMode, onOpen }) {
   );
 }
 
-// ── Grid view (bento) ────────────────────────────────────────────────────────
+// ── Grid view (bento) ──────────────────────────────────────────────────────────────────────────
 function GridView({ projects, iconMode, onOpen }) {
   return (
     <div className="grid grid-bento">
@@ -117,7 +118,7 @@ function GridView({ projects, iconMode, onOpen }) {
   );
 }
 
-// ── List view ────────────────────────────────────────────────────────────────
+// ── List view ───────────────────────────────────────────────────────────────────────────────
 function ListView({ projects, iconMode, onOpen }) {
   return (
     <div className="list">
@@ -141,14 +142,14 @@ function ListView({ projects, iconMode, onOpen }) {
   );
 }
 
-// ── Map view — grouped by category, side by side ────────────────────────────
+// ── Map view — grouped by category, side by side ──────────────────────────────────────────
 function MapView({ projects, iconMode, onOpen }) {
   const groups = useMemo(() => {
-    const g = { game: [], project: [], mcp: [], agent: [] };
+    const g = { game: [], project: [], library: [], mcp: [], agent: [] };
     projects.forEach(p => g[p.cat]?.push(p));
     return g;
   }, [projects]);
-  const order = ['project', 'agent', 'mcp', 'game'];
+  const order = ['project', 'library', 'agent', 'mcp', 'game'];
   return (
     <div className="map">
       {order.map(key => {

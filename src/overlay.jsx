@@ -204,6 +204,13 @@ function PreviewOverlay({ project, iconMode, onClose }) {
   const accent = window.CAT_ACCENT[project.cat];
   const c = window.CATEGORIES[project.cat];
 
+  const usedDeps = useMemo(() => {
+    if (!project.uses) return [];
+    return project.uses
+      .map(id => window.PORTFOLIO_PROJECTS.find(p => p.id === id))
+      .filter(Boolean);
+  }, [project.uses]);
+
   return (
     <div className="overlay" onClick={onClose}>
       <div
@@ -261,6 +268,27 @@ function PreviewOverlay({ project, iconMode, onClose }) {
               ))}
             </div>
           </section>
+
+          {usedDeps.length > 0 && (
+            <section className="overlay-section">
+              <div className="overlay-section-label">Powered by</div>
+              <div className="overlay-tech">
+                {usedDeps.map(dep => (
+                  <a
+                    key={dep.id}
+                    href={dep.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pill pill-lg pill-dep"
+                    style={{ '--dep-accent': window.CAT_ACCENT[dep.cat] }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {dep.title}
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section className="overlay-actions">
             {project.live && (

@@ -101,6 +101,19 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'steadyhum',
+    title: 'SteadyHum',
+    glyph: 'Sh',
+    cat: 'project',
+    desc: 'PWA that listens to a home appliance through the phone microphone, learns what it sounds like when healthy, and tells you when something changes — with a plain-English description of the difference.',
+    tech: ['TypeScript', 'Vite', 'MediaPipe', 'PWA'],
+    live: 'https://ezar.github.io/steadyhum/',
+    repo: 'https://github.com/ezar/steadyhum',
+    year: 2026,
+    featured: false,
+    uses: ['earshot'],
+  },
+  {
     id: 'meowlogue',
     title: 'Meowlogue',
     glyph: 'Ml',
@@ -111,6 +124,7 @@ window.PORTFOLIO_PROJECTS = [
     repo: 'https://github.com/ezar/meowlogue',
     year: 2026,
     featured: false,
+    uses: ['earshot'],
   },
   {
     id: 'kinetrace',
