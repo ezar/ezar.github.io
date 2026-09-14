@@ -211,6 +211,8 @@ function PreviewOverlay({ project, iconMode, onClose }) {
       .filter(Boolean);
   }, [project.uses]);
 
+  const showPreview = project.cat !== 'library';
+
   return (
     <div className="overlay" onClick={onClose}>
       <div
@@ -244,10 +246,12 @@ function PreviewOverlay({ project, iconMode, onClose }) {
         </header>
 
         <div className="overlay-body">
-          <div className="overlay-screens">
-            <ScreenSlot project={project} kind="desktop" accent={accent} />
-            <ScreenSlot project={project} kind="mobile" accent={accent} />
-          </div>
+          {showPreview && (
+            <div className="overlay-screens">
+              <ScreenSlot project={project} kind="desktop" accent={accent} />
+              <ScreenSlot project={project} kind="mobile" accent={accent} />
+            </div>
+          )}
 
           <section className="overlay-section">
             <div className="overlay-section-label">Overview</div>
