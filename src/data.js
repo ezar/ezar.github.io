@@ -89,6 +89,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'earshot',
+    title: 'earshot',
+    glyph: 'Ea',
+    cat: 'library',
+    desc: 'Framework-agnostic browser audio library. Captures mic input via AudioWorklet, runs MediaPipe YAMNet locally to classify and embed audio, and provides anomaly scoring and vocalization detection — the shared engine behind SteadyHum and Meowlogue.',
+    tech: ['TypeScript', 'MediaPipe', 'Web Audio API'],
+    live: null,
+    repo: 'https://github.com/ezar/earshot',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'kinetrace',
     title: 'Kinetrace',
     glyph: 'Kt',
@@ -307,10 +319,11 @@ window.PORTFOLIO_PROJECTS = [
 ];
 
 window.CATEGORIES = {
-  game:    { label: 'Game',    plural: 'Games',    legacyEmoji: '🎮' },
-  project: { label: 'Project', plural: 'Projects', legacyEmoji: '🏠' },
-  mcp:     { label: 'MCP',     plural: 'MCP',      legacyEmoji: '🤖' },
-  agent:   { label: 'Agent',   plural: 'Agents',   legacyEmoji: '📈' },
+  game:    { label: 'Game',    plural: 'Games',     legacyEmoji: '🎮' },
+  project: { label: 'Project', plural: 'Projects',  legacyEmoji: '🏠' },
+  library: { label: 'Library', plural: 'Libraries', legacyEmoji: '📦' },
+  mcp:     { label: 'MCP',     plural: 'MCP',       legacyEmoji: '🤖' },
+  agent:   { label: 'Agent',   plural: 'Agents',    legacyEmoji: '📈' },
 };
 
 window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe', 'WebGL2'];
