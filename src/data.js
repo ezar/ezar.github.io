@@ -101,6 +101,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'meowlogue',
+    title: 'Meowlogue',
+    glyph: 'Ml',
+    cat: 'project',
+    desc: 'PWA that listens for cat vocalizations, learns to tell your cats apart by voice, and logs what each call usually means in your home. Runs the earshot audio engine fully on-device — audio never leaves the phone.',
+    tech: ['TypeScript', 'Vite', 'MediaPipe', 'PWA'],
+    live: 'https://ezar.github.io/meowlogue/',
+    repo: 'https://github.com/ezar/meowlogue',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'kinetrace',
     title: 'Kinetrace',
     glyph: 'Kt',
