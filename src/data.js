@@ -101,6 +101,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'estela',
+    title: 'Estela',
+    glyph: 'Es',
+    cat: 'project',
+    desc: 'Visual trail experiment — particles and generative motion in the browser.',
+    tech: ['TypeScript', 'Vite', 'Canvas'],
+    live: 'https://ezar.github.io/estela/',
+    repo: 'https://github.com/ezar/estela',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'beat-painter',
     title: 'beat-painter',
     glyph: 'Bp',
@@ -289,4 +301,4 @@ window.CATEGORIES = {
   agent:   { label: 'Agent',   plural: 'Agents',   legacyEmoji: '📈' },
 };
 
-window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js'];
+window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe'];
