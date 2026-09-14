@@ -89,6 +89,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'kinetrace',
+    title: 'Kinetrace',
+    glyph: 'Kt',
+    cat: 'project',
+    desc: 'Browser physiotherapy coach. On-device MediaPipe Pose counts reps, times holds, measures range of motion and corrects form with spoken cues — video never leaves the device. Voice commands via Whisper on WebGPU, skeleton replay, sheet import via OCR, offline PWA.',
+    tech: ['TypeScript', 'Vite', 'MediaPipe', 'WebGPU', 'PWA'],
+    live: 'https://ezar.github.io/kinetrace/',
+    repo: 'https://github.com/ezar/kinetrace',
+    year: 2026,
+    featured: true,
+  },
+  {
     id: 'theremano',
     title: 'Theremano',
     glyph: 'Tr',
@@ -301,4 +313,4 @@ window.CATEGORIES = {
   agent:   { label: 'Agent',   plural: 'Agents',   legacyEmoji: '📈' },
 };
 
-window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe'];
+window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe', 'WebGL2'];
