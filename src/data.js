@@ -172,7 +172,7 @@ window.PORTFOLIO_PROJECTS = [
     live: 'https://ezar.github.io/vibeamp/',
     repo: 'https://github.com/ezar/vibeamp',
     year: 2026,
-    featured: false,
+    featured: true,
   },
   {
     id: 'beat-painter',
