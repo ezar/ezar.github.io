@@ -163,6 +163,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'vibeamp',
+    title: 'vibeamp',
+    glyph: 'Va',
+    cat: 'project',
+    desc: 'Local music in the Winamp 2.9 interface, queued by how it sounds — tempo, key, energy and brightness analysed from the audio, harmonic mixing on the Camelot wheel, share a vibe as a 12-character link. Loads real .wsz skins. Fully offline.',
+    tech: ['TypeScript', 'Vite', 'Web Audio API', 'PWA'],
+    live: 'https://ezar.github.io/vibeamp/',
+    repo: 'https://github.com/ezar/vibeamp',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'beat-painter',
     title: 'beat-painter',
     glyph: 'Bp',
