@@ -26,6 +26,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: true,
   },
   {
+    id: 'hearthwake',
+    title: 'Hearthwake',
+    glyph: 'Hw',
+    cat: 'project',
+    desc: 'Point the camera at a household object and wake it up — it gets a name, a personality and a voice, and remembers what you tell it. Two objects can talk to each other or run a treasure hunt. Every AI model runs fully in the browser via WebGPU; nothing leaves the device.',
+    tech: ['TypeScript', 'React', 'Vite', 'WebGPU'],
+    live: 'https://ezar.github.io/hearthwake/',
+    repo: 'https://github.com/ezar/hearthwake',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'estela',
     title: 'Estela',
     glyph: 'Es',
