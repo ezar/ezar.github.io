@@ -223,10 +223,6 @@ function AboutSection({ accent }) {
               <span className="about-fact-label">Focus</span>
               <span className="about-fact-value">Industrial AI · Web Platform · Creative tools</span>
             </div>
-            <div className="about-fact">
-              <span className="about-fact-label">Open to</span>
-              <span className="about-fact-value">Collaborations · Interesting problems</span>
-            </div>
           </div>
         </div>
       </div>
