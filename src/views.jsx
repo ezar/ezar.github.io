@@ -10,8 +10,8 @@ const CAT_ACCENT = {
   agent:   'oklch(0.72 0.16 25)',   // rose
 };
 
-// ── Card ─────────────────────────────────────────────────────────────────────────────────
-function ProjectCard({ project, iconMode, onOpen, featured = false }) {
+// ── Card ─────────────────────────────────────────────────────────────────────
+function ProjectCard({ project, iconMode, onOpen, onFilterTech, activeTechs, featured = false }) {
   const accent = CAT_ACCENT[project.cat];
   return (
     <article
@@ -23,6 +23,7 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
       <div className="card-head">
         <ProjectIcon project={project} iconMode={iconMode} size={28} accent={accent} />
         <div className="card-head-right">
+          {featured && <span className="card-badge-featured" style={{ color: accent }}>★</span>}
           {project.forked && <span className="card-fork">↳ fork</span>}
           <span className="card-tag" style={{ color: accent, borderColor: accent + '33' }}>
             {window.CATEGORIES[project.cat].label}
@@ -37,12 +38,14 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
 
       <div className="card-tech">
         {project.tech.map(t => (
-          <span
+          <button
             key={t}
-            className={'pill' + (window.TECH_HIGHLIGHT.includes(t) ? ' pill-hi' : '')}
+            className={'pill pill-btn' + (activeTechs?.has(t) ? ' pill-active' : '') + (window.TECH_HIGHLIGHT.includes(t) ? ' pill-hi' : '')}
+            title={`Filter by ${t}`}
+            onClick={(e) => { e.stopPropagation(); onFilterTech?.(t); }}
           >
             {t}
-          </span>
+          </button>
         ))}
       </div>
 
@@ -59,8 +62,8 @@ function ProjectCard({ project, iconMode, onOpen, featured = false }) {
   );
 }
 
-// ── List row ────────────────────────────────────────────────────────────────────────────────
-function ProjectRow({ project, iconMode, onOpen }) {
+// ── List row ─────────────────────────────────────────────────────────────────
+function ProjectRow({ project, iconMode, onOpen, onFilterTech, activeTechs }) {
   const accent = CAT_ACCENT[project.cat];
   return (
     <button
@@ -81,7 +84,14 @@ function ProjectRow({ project, iconMode, onOpen }) {
       <span className="row-desc">{project.desc}</span>
       <span className="row-tech">
         {project.tech.slice(0, 4).map(t => (
-          <span key={t} className="pill pill-sm">{t}</span>
+          <span
+            key={t}
+            className={'pill pill-sm pill-btn' + (activeTechs?.has(t) ? ' pill-active' : '')}
+            title={`Filter by ${t}`}
+            onClick={(e) => { e.stopPropagation(); onFilterTech?.(t); }}
+          >
+            {t}
+          </span>
         ))}
         {project.tech.length > 4 && (
           <span className="pill pill-sm pill-faint">+{project.tech.length - 4}</span>
@@ -98,8 +108,8 @@ function ProjectRow({ project, iconMode, onOpen }) {
   );
 }
 
-// ── Grid view (bento) ──────────────────────────────────────────────────────────────────────────
-function GridView({ projects, iconMode, onOpen }) {
+// ── Grid view (bento) ────────────────────────────────────────────────────────
+function GridView({ projects, iconMode, onOpen, onFilterTech, activeTechs }) {
   return (
     <div className="grid grid-bento">
       {projects.map(p => (
@@ -108,6 +118,8 @@ function GridView({ projects, iconMode, onOpen }) {
           project={p}
           iconMode={iconMode}
           onOpen={onOpen}
+          onFilterTech={onFilterTech}
+          activeTechs={activeTechs}
           featured={p.featured}
         />
       ))}
@@ -118,8 +130,8 @@ function GridView({ projects, iconMode, onOpen }) {
   );
 }
 
-// ── List view ───────────────────────────────────────────────────────────────────────────────
-function ListView({ projects, iconMode, onOpen }) {
+// ── List view ────────────────────────────────────────────────────────────────
+function ListView({ projects, iconMode, onOpen, onFilterTech, activeTechs }) {
   return (
     <div className="list">
       <div className="list-header">
@@ -133,7 +145,7 @@ function ListView({ projects, iconMode, onOpen }) {
         <span></span>
       </div>
       {projects.map(p => (
-        <ProjectRow key={p.id} project={p} iconMode={iconMode} onOpen={onOpen} />
+        <ProjectRow key={p.id} project={p} iconMode={iconMode} onOpen={onOpen} onFilterTech={onFilterTech} activeTechs={activeTechs} />
       ))}
       {projects.length === 0 && (
         <div className="empty">No projects match the current filters.</div>
@@ -142,7 +154,7 @@ function ListView({ projects, iconMode, onOpen }) {
   );
 }
 
-// ── Map view — grouped by category, side by side ──────────────────────────────────────────
+// ── Map view — grouped by category, side by side ────────────────────────────
 function MapView({ projects, iconMode, onOpen }) {
   const groups = useMemo(() => {
     const g = { game: [], project: [], library: [], mcp: [], agent: [] };

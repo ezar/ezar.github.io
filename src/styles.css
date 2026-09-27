@@ -300,8 +300,13 @@ body {
 }
 .card-featured {
   background:
-    linear-gradient(180deg, color-mix(in oklch, var(--card-accent) 4%, transparent), transparent 40%),
+    linear-gradient(180deg, color-mix(in oklch, var(--card-accent) 5%, transparent), transparent 45%),
     var(--surface);
+}
+.card-featured .card-rule { opacity: 0.4; }
+.card-badge-featured {
+  font-size: 0.7rem;
+  opacity: 0.65;
 }
 .card-rule {
   position: absolute;
@@ -369,6 +374,25 @@ body {
 .pill-sm { font-size: 0.62rem; padding: 0.12rem 0.4rem; }
 .pill-lg { font-size: 0.75rem; padding: 0.28rem 0.65rem; }
 .pill-faint { color: var(--text-faint); }
+
+.pill-btn {
+  font: inherit;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.pill-btn:hover {
+  background: color-mix(in oklch, var(--text) 11%, transparent);
+  border-color: var(--border);
+  color: var(--text);
+}
+.pill-hi.pill-btn:hover {
+  background: color-mix(in oklch, var(--accent) 18%, transparent);
+  border-color: color-mix(in oklch, var(--accent) 50%, transparent);
+}
+.pill-active {
+  outline: 1px solid var(--border);
+  outline-offset: 1px;
+}
 .pill-dep {
   background: color-mix(in oklch, var(--dep-accent) 10%, transparent);
   color: var(--dep-accent);
@@ -1005,6 +1029,79 @@ body {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+/* =============================================================================
+   ABOUT
+   ============================================================================= */
+.about { padding: var(--gap-section) 0 0; }
+.about-inner {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2rem 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+@media (max-width: 640px) {
+  .about-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 1.25rem; }
+  .about-avatar { display: none; }
+}
+.about-avatar {
+  width: 80px; height: 80px;
+  border-radius: 18px;
+  background: color-mix(in oklch, var(--avatar-accent) 12%, var(--surface-hi));
+  border: 1px solid color-mix(in oklch, var(--avatar-accent) 28%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.about-initials {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 1.85rem;
+  color: var(--avatar-accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.about-name {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  margin-bottom: 0.7rem;
+  line-height: 1.1;
+}
+.about-text {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 66ch;
+  text-wrap: pretty;
+}
+.about-text + .about-text { margin-top: 0.6rem; }
+.about-facts {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.about-fact {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  font-size: 0.88rem;
+}
+.about-fact-label {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.about-fact-value { color: var(--text-dim); }
 
 .footer {
   padding: var(--gap-section) 0 3rem;
