@@ -38,6 +38,18 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
   },
   {
+    id: 'hidelings',
+    title: 'Hidelings',
+    glyph: 'Hd',
+    cat: 'game',
+    desc: 'AR hide-and-seek in your own room. Six creature species hide behind real furniture using on-device depth AI (Depth Anything V2 on WebGPU); catch them with a tap or a pinch. Pass-and-play or solo mode, iOS AR Quick Look and Android WebXR. No app, no account — images never leave the phone.',
+    tech: ['TypeScript', 'React', 'Vite', 'Three.js', 'WebGPU', 'PWA'],
+    live: 'https://ezar.github.io/hidelings/',
+    repo: 'https://github.com/ezar/hidelings',
+    year: 2026,
+    featured: false,
+  },
+  {
     id: 'estela',
     title: 'Estela',
     glyph: 'Es',
