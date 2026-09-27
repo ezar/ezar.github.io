@@ -172,7 +172,7 @@ function NowStrip({ accent }) {
     { kw: 'Building', text: 'Brain Twin — AI second brain that maps your personal knowledge graph.' },
     { kw: 'Building', text: 'The Ninth Chamber · 3D puzzle game with Three.js, WebGPU and hand-crafted Blender assets.' },
     { kw: 'Learning', text: 'Vibe coding — sharpening AI-assisted development workflow and pushing what’s possible solo.' },
-    { kw: 'Building', text: 'Industrial MCP suite — Claude-compatible tools for industrial automation, deployed across desktop, web and embedded platforms.' },
+    { kw: 'Building', text: 'Industrial AI — a Claude-style assistant for industry: TUI, browser extension, mobile and desktop apps, all sharing one core.' },
   ];
   return (
     <section className="now">
