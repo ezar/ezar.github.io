@@ -170,7 +170,7 @@ function StackAggregate({ projects }) {
 function NowStrip({ accent }) {
   const items = [
     { kw: 'Building', text: 'Brain Twin — AI second brain that maps your personal knowledge graph.' },
-    { kw: 'Building', text: 'Zoom Viewer — meeting intelligence layer: transcripts, summaries, action items.' },
+    { kw: 'Building', text: 'The Ninth Chamber · 3D puzzle game with Three.js, WebGPU and hand-crafted Blender assets.' },
     { kw: 'Reading',  text: 'Designing Data-Intensive Applications · revisiting CRDTs.' },
   ];
   return (
