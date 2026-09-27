@@ -108,11 +108,12 @@ function App() {
       </div>
 
       <main className="main">
-        {view === 'grid' && <GridView projects={filtered} iconMode={t.iconMode} onOpen={onOpen} />}
-        {view === 'list' && <ListView projects={filtered} iconMode={t.iconMode} onOpen={onOpen} />}
+        {view === 'grid' && <GridView projects={filtered} iconMode={t.iconMode} onOpen={onOpen} onFilterTech={toggleTech} activeTechs={activeTechs} />}
+        {view === 'list' && <ListView projects={filtered} iconMode={t.iconMode} onOpen={onOpen} onFilterTech={toggleTech} activeTechs={activeTechs} />}
         {view === 'map'  && <MapView  projects={filtered} iconMode={t.iconMode} onOpen={onOpen} />}
       </main>
 
+      <AboutSection accent={t.accent} />
       <NowStrip accent={t.accent} />
       <StackAggregate projects={window.PORTFOLIO_PROJECTS} />
       <FooterBlock accent={t.accent} />

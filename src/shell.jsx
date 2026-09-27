@@ -193,12 +193,63 @@ function NowStrip({ accent }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// About — bio + quick facts.
+
+function AboutSection({ accent }) {
+  return (
+    <section className="about">
+      <div className="about-inner">
+        <div className="about-avatar" style={{ '--avatar-accent': accent }}>
+          <span className="about-initials">CR</span>
+        </div>
+        <div className="about-bio">
+          <h2 className="about-name">About</h2>
+          <p className="about-text">
+            Software developer from Spain building at the intersection of AI, web platform capabilities
+            and the industrial world. I explore what the browser can do — real-time audio, computer vision,
+            3D — and ship those experiments as tools people actually use.
+          </p>
+          <p className="about-text">
+            Currently focused on Industrial AI: a Claude-style multi-platform assistant for factory floors
+            and field engineers, covering TUI, browser extension, mobile and desktop under one core.
+            Alongside that, games and creative tools keep the shipping muscles sharp.
+          </p>
+          <div className="about-facts">
+            <div className="about-fact">
+              <span className="about-fact-label">Location</span>
+              <span className="about-fact-value">Spain</span>
+            </div>
+            <div className="about-fact">
+              <span className="about-fact-label">Focus</span>
+              <span className="about-fact-value">Industrial AI · Web Platform · Creative tools</span>
+            </div>
+            <div className="about-fact">
+              <span className="about-fact-label">Open to</span>
+              <span className="about-fact-value">Collaborations · Interesting problems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Footer — contact + social.
 
 function FooterBlock({ accent }) {
   return (
     <footer className="footer">
       <div className="footer-grid">
+        <div className="footer-cell">
+          <div className="footer-label">Contact</div>
+          <a className="footer-link" href="mailto:cramos@gmail.com">
+            <MailIcon size={14} /> cramos@gmail.com
+          </a>
+          <p className="footer-sub" style={{ marginTop: '0.35rem' }}>
+            Open to collaborations, interesting problems and conversations.
+          </p>
+        </div>
         <div className="footer-cell">
           <div className="footer-label">Elsewhere</div>
           <a className="footer-link" href="https://github.com/ezar" target="_blank" rel="noreferrer">
@@ -223,4 +274,4 @@ function FooterBlock({ accent }) {
   );
 }
 
-Object.assign(window, { Hero, FiltersBar, StackAggregate, NowStrip, FooterBlock });
+Object.assign(window, { Hero, FiltersBar, StackAggregate, NowStrip, AboutSection, FooterBlock });

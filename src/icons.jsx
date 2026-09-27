@@ -164,11 +164,21 @@ function ProjectIcon({ project, iconMode, size = 28, accent }) {
   );
 }
 
+function MailIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="2.5" width="12" height="9" rx="1.5" />
+      <path d="M1 5l6 4 6-4" />
+    </svg>
+  );
+}
+
 Object.assign(window, {
   CatIcon,
   ChevronIcon,
   ArrowOutIcon,
   GithubIcon,
+  MailIcon,
   SunIcon,
   MoonIcon,
   CloseIcon,
