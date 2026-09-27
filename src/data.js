@@ -7,7 +7,7 @@ window.PORTFOLIO_PROJECTS = [
     glyph: 'Nc',
     cat: 'game',
     desc: 'Third-person tomb-exploration adventure for the browser, in the spirit of 1996–2000 classics. Play as Nora Vidal, archaeologist — read the architecture, move the stones, survive the tomb. Baked indirect light, volumetric shafts, GTAO, adaptive orchestral score and haptics. Deterministic simulation; puzzles as JSON with a bot test suite. Desktop, phone and gamepad.',
-    tech: ['TypeScript', 'Vite', 'Three.js', 'WebGPU', 'Web Audio API'],
+    tech: ['TypeScript', 'Vite', 'Three.js', 'WebGPU', 'Web Audio API', 'Blender'],
     live: 'https://ezar.github.io/ninth-chamber/',
     repo: 'https://github.com/ezar/ninth-chamber',
     year: 2026,
@@ -400,4 +400,4 @@ window.CATEGORIES = {
   agent:   { label: 'Agent',   plural: 'Agents',    legacyEmoji: '📈' },
 };
 
-window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe', 'WebGL2', 'WebGPU', 'Dexie', 'Three.js'];
+window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe', 'WebGL2', 'WebGPU', 'Dexie', 'Three.js', 'Blender'];
