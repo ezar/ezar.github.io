@@ -245,6 +245,23 @@ function PreviewOverlay({ project, iconMode, onClose }) {
           </button>
         </header>
 
+        {/* Mobile-only CTA — shown above the fold so the user sees it immediately */}
+        {(project.live || project.repo) && (
+          <div className="overlay-mobile-cta">
+            {project.live && (
+              <a className="btn btn-primary" href={project.live} target="_blank" rel="noreferrer"
+                 style={{ '--card-accent': accent }}>
+                <ArrowOutIcon size={12} /> Open live
+              </a>
+            )}
+            {project.repo && (
+              <a className="btn btn-ghost" href={project.repo} target="_blank" rel="noreferrer">
+                <GithubIcon size={14} /> GitHub
+              </a>
+            )}
+          </div>
+        )}
+
         <div className="overlay-body">
           {showPreview && (
             <div className="overlay-screens">

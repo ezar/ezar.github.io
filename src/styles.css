@@ -719,6 +719,21 @@ body {
 }
 .overlay-close:hover { color: var(--text); border-color: var(--border); background: var(--surface-hi); }
 
+/* Mobile-only CTA strip — hidden on desktop, shown at the top on mobile */
+.overlay-mobile-cta {
+  display: none;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-soft);
+  background: color-mix(in oklch, var(--surface) 40%, transparent);
+}
+.overlay-mobile-cta .btn {
+  flex: 1;
+  justify-content: center;
+  padding: 0.85rem 1rem;
+  font-size: 0.92rem;
+}
+
 .overlay-body {
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -737,6 +752,29 @@ body {
 @media (max-width: 780px) {
   .overlay-screens { grid-template-columns: 1fr; }
   .overlay-screens .screen-mobile { max-width: 280px; margin: 0 auto; }
+}
+
+/* On actual mobile: bottom sheet, hide iframes, show top CTA */
+@media (max-width: 640px) {
+  .overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .overlay-panel {
+    width: 100%;
+    max-height: 88vh;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 0;
+    animation: overlay-sheet .28s cubic-bezier(.2,.7,.2,1);
+  }
+  @keyframes overlay-sheet {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);   opacity: 1; }
+  }
+  .overlay-screens { display: none; }
+  .overlay-mobile-cta { display: flex; }
+  .overlay-head { padding: 1rem 1.1rem; }
+  .overlay-body { padding: 1rem 1.1rem; }
 }
 
 .screen {
