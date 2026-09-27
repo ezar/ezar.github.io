@@ -401,3 +401,40 @@ window.CATEGORIES = {
 };
 
 window.TECH_HIGHLIGHT = ['React', 'TypeScript', 'Python', 'Claude AI', 'PWA', 'Next.js', 'Vue 3', 'Tone.js', 'MediaPipe', 'WebGL2', 'WebGPU', 'WGSL', 'GLSL', 'Dexie', 'Three.js', 'Blender', 'Transformers.js', 'WebXR', 'Matter.js', 'Zustand', 'Framer Motion'];
+
+// External library / tool URLs — tech pills in the overlay link here.
+window.TECH_LINKS = {
+  'Three.js':          'https://threejs.org',
+  'Matter.js':         'https://brm.io/matter-js',
+  'Tone.js':           'https://tonejs.github.io',
+  'Transformers.js':   'https://huggingface.co/docs/transformers.js',
+  'MediaPipe':         'https://ai.google.dev/edge/mediapipe/solutions/guide',
+  'Dexie':             'https://dexie.org',
+  'Zustand':           'https://zustand-demo.pmnd.rs',
+  'Framer Motion':     'https://www.framer.com/motion',
+  'Vite':              'https://vitejs.dev',
+  'React':             'https://react.dev',
+  'React 19':          'https://react.dev',
+  'Next.js':           'https://nextjs.org',
+  'Vue 3':             'https://vuejs.org',
+  'Pinia':             'https://pinia.vuejs.org',
+  'Chart.js':          'https://www.chartjs.org',
+  'Recharts':          'https://recharts.org',
+  'Tailwind CSS':      'https://tailwindcss.com',
+  'Supabase':          'https://supabase.com',
+  'Cloudflare':        'https://workers.cloudflare.com',
+  'Docker':            'https://www.docker.com',
+  'Blender':           'https://www.blender.org',
+  'Rollup':            'https://rollupjs.org',
+  'Flask':             'https://flask.palletsprojects.com',
+  'Avalonia':          'https://avaloniaui.net',
+  'PlatformIO':        'https://platformio.org',
+  'Vercel':            'https://vercel.com',
+  'TypeScript':        'https://www.typescriptlang.org',
+  'Python':            'https://www.python.org',
+  'Claude AI':         'https://www.anthropic.com/claude',
+  'WebXR':             'https://immersiveweb.dev',
+  'LVGL':              'https://lvgl.io',
+  'ArduinoJSON':       'https://arduinojson.org',
+  'yfinance':          'https://pypi.org/project/yfinance',
+};

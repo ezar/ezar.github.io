@@ -4,7 +4,6 @@
    ============================================================================= */
 
 :root {
-  /* Base neutrals — cool slate, 0.005 chroma keeps it nearly grey */
   --bg:          oklch(0.16 0.005 270);
   --bg-elev:     oklch(0.19 0.006 270);
   --surface:     oklch(0.21 0.007 270);
@@ -15,15 +14,9 @@
   --text-dim:    oklch(0.70 0.012 270);
   --text-faint:  oklch(0.50 0.012 270);
   --text-mute:   oklch(0.38 0.010 270);
-
-  /* Accent — defaults to iris; overridden by Tweaks at runtime */
   --accent:      #a39bff;
   --accent-soft: #a39bff22;
-
-  /* Status */
   --ok:          oklch(0.78 0.13 165);
-
-  /* Density (overridden by .density-* class) */
   --pad-page:    clamp(1.5rem, 4vw, 3.5rem);
   --pad-card:    1.6rem;
   --gap-grid:    1rem;
@@ -132,7 +125,6 @@ body {
   max-width: 38ch;
   line-height: 1.55;
 }
-
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -230,11 +222,7 @@ body {
 }
 .chip-cat svg { opacity: 0.9; }
 .chip-tech { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.02em; }
-.chip-clear {
-  color: var(--text-faint);
-  border-color: transparent;
-  margin-left: 0.3rem;
-}
+.chip-clear { color: var(--text-faint); border-color: transparent; margin-left: 0.3rem; }
 .chip-clear:hover { color: var(--text); border-color: var(--border); }
 .chip-surprise {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -268,10 +256,7 @@ body {
   letter-spacing: 0.02em;
 }
 .seg-btn:hover { color: var(--text); }
-.seg-btn.active {
-  background: var(--text);
-  color: var(--bg);
-}
+.seg-btn.active { background: var(--text); color: var(--bg); }
 
 /* =============================================================================
    MAIN AREA
@@ -286,9 +271,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--gap-grid);
 }
-.grid-bento .card-featured {
-  grid-column: span 2;
-}
+.grid-bento .card-featured { grid-column: span 2; }
 @media (max-width: 720px) {
   .grid-bento .card-featured { grid-column: span 1; }
 }
@@ -330,11 +313,7 @@ body {
 }
 .card:hover .card-rule { opacity: 0.75; }
 
-.card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.card-head { display: flex; align-items: center; justify-content: space-between; }
 .card-head-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
 .card-fork {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -369,11 +348,7 @@ body {
 }
 .card-featured .card-desc { font-size: 0.92rem; max-width: 56ch; }
 
-.card-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
+.card-tech { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 .pill {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.66rem;
@@ -384,6 +359,7 @@ body {
   border: 1px solid var(--border-soft);
   letter-spacing: 0.01em;
   white-space: nowrap;
+  text-decoration: none;
 }
 .pill-hi {
   background: var(--accent-soft);
@@ -403,6 +379,27 @@ body {
 .pill-dep:hover {
   background: color-mix(in oklch, var(--dep-accent) 20%, transparent);
   border-color: color-mix(in oklch, var(--dep-accent) 55%, transparent);
+}
+/* External-link pill — shown in the overlay Stack section */
+.pill-ext {
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.pill-ext:hover {
+  background: color-mix(in oklch, var(--accent) 12%, transparent);
+  border-color: color-mix(in oklch, var(--accent) 40%, transparent);
+  color: var(--accent);
+}
+.pill-hi.pill-ext:hover {
+  background: color-mix(in oklch, var(--accent) 22%, transparent);
+  border-color: color-mix(in oklch, var(--accent) 60%, transparent);
+}
+.pill-ext-arrow {
+  font-size: 0.7em;
+  opacity: 0.55;
+  margin-left: 1px;
+  vertical-align: super;
+  line-height: 0;
 }
 
 .card-foot {
@@ -449,10 +446,7 @@ body {
   gap: 0.35rem;
   transition: gap .15s, color .15s;
 }
-.card:hover .card-cta {
-  color: var(--card-accent);
-  gap: 0.55rem;
-}
+.card:hover .card-cta { color: var(--card-accent); gap: 0.55rem; }
 
 /* =============================================================================
    LIST VIEW
@@ -496,12 +490,7 @@ body {
 .row:hover { background: var(--surface-hi); }
 .row-title { font-weight: 500; font-size: 0.95rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.5rem; }
 .row-fork { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.6rem; color: var(--text-mute); font-weight: 400; }
-.row-tag {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+.row-tag { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; }
 .row-desc {
   color: var(--text-dim);
   font-size: 0.82rem;
@@ -512,11 +501,7 @@ body {
   overflow: hidden;
 }
 .row-tech { display: flex; flex-wrap: wrap; gap: 0.25rem; }
-.row-year {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.7rem;
-  color: var(--text-faint);
-}
+.row-year { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.7rem; color: var(--text-faint); }
 .row-status { display: flex; justify-content: center; }
 .row-open { color: var(--text-faint); display: flex; justify-content: flex-end; }
 .row:hover .row-open { color: var(--card-accent); }
@@ -682,11 +667,7 @@ body {
   border-bottom: 1px solid var(--border-soft);
   background: color-mix(in oklch, var(--surface) 60%, transparent);
 }
-.overlay-head-left {
-  display: flex;
-  gap: 0.85rem;
-  align-items: center;
-}
+.overlay-head-left { display: flex; gap: 0.85rem; align-items: center; }
 .overlay-eyebrow {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.66rem;
@@ -719,7 +700,6 @@ body {
 }
 .overlay-close:hover { color: var(--text); border-color: var(--border); background: var(--surface-hi); }
 
-/* Mobile-only CTA strip — hidden on desktop, shown at the top on mobile */
 .overlay-mobile-cta {
   display: none;
   gap: 0.6rem;
@@ -727,12 +707,7 @@ body {
   border-bottom: 1px solid var(--border-soft);
   background: color-mix(in oklch, var(--surface) 40%, transparent);
 }
-.overlay-mobile-cta .btn {
-  flex: 1;
-  justify-content: center;
-  padding: 0.85rem 1rem;
-  font-size: 0.92rem;
-}
+.overlay-mobile-cta .btn { flex: 1; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem; }
 
 .overlay-body {
   padding: 1.25rem 1.5rem;
@@ -754,12 +729,8 @@ body {
   .overlay-screens .screen-mobile { max-width: 280px; margin: 0 auto; }
 }
 
-/* On actual mobile: bottom sheet, hide iframes, show top CTA */
 @media (max-width: 640px) {
-  .overlay {
-    padding: 0;
-    align-items: flex-end;
-  }
+  .overlay { padding: 0; align-items: flex-end; }
   .overlay-panel {
     width: 100%;
     max-height: 88vh;
@@ -793,7 +764,6 @@ body {
   border-color: #18181c;
   background: #000;
 }
-/* Browser chrome (desktop) — sits above iframe in flex column */
 .browser-bar {
   height: 34px;
   flex-shrink: 0;
@@ -819,7 +789,6 @@ body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   text-align: center;
 }
-/* Phone chrome overlays (mobile) */
 .phone-notch {
   position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
   width: 30%; height: 16px;

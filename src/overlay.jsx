@@ -58,14 +58,11 @@ function ScreenSlot({ project, kind, accent }) {
     return () => obs.disconnect();
   }, [kind]);
 
-  // Reset state when project changes
   useEffect(() => {
     setIframeOk(true);
     setShowIframe(true);
   }, [project.id, kind]);
 
-  // Some hosts block embedding via X-Frame-Options / CSP; we can't detect that
-  // synchronously, but onload not firing within ~3.5s = likely blocked.
   useEffect(() => {
     if (!project.live || !showIframe) return;
     let done = false;
@@ -145,7 +142,6 @@ function ScreenSlot({ project, kind, accent }) {
         />
       );
     }
-    // Placeholder + drop-zone
     return (
       <label
         className={'screen-drop' + (dragOver ? ' is-drag' : '')}
@@ -187,8 +183,27 @@ function ScreenSlot({ project, kind, accent }) {
   );
 }
 
+function TechPill({ name }) {
+  const url = window.TECH_LINKS?.[name];
+  const cls = 'pill pill-lg' + (window.TECH_HIGHLIGHT.includes(name) ? ' pill-hi' : '') + (url ? ' pill-ext' : '');
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className={cls}
+        onClick={(e) => e.stopPropagation()}
+        title={`Open ${name} docs`}
+      >
+        {name} <span className="pill-ext-arrow">↗</span>
+      </a>
+    );
+  }
+  return <span className={cls}>{name}</span>;
+}
+
 function PreviewOverlay({ project, iconMode, onClose }) {
-  // All hooks must be called unconditionally before any early return.
   useEffect(() => {
     if (!project) return;
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -245,7 +260,6 @@ function PreviewOverlay({ project, iconMode, onClose }) {
           </button>
         </header>
 
-        {/* Mobile-only CTA — shown above the fold so the user sees it immediately */}
         {(project.live || project.repo) && (
           <div className="overlay-mobile-cta">
             {project.live && (
@@ -279,14 +293,7 @@ function PreviewOverlay({ project, iconMode, onClose }) {
           <section className="overlay-section">
             <div className="overlay-section-label">Stack</div>
             <div className="overlay-tech">
-              {project.tech.map(t => (
-                <span
-                  key={t}
-                  className={'pill pill-lg' + (window.TECH_HIGHLIGHT.includes(t) ? ' pill-hi' : '')}
-                >
-                  {t}
-                </span>
-              ))}
+              {project.tech.map(t => <TechPill key={t} name={t} />)}
             </div>
           </section>
 
